@@ -7,7 +7,8 @@ import * as Rellax from 'rellax';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-  data : Date = new Date();
+  focus = false;
+  focus1 = false;
 
   constructor() { }
 
@@ -25,4 +26,5 @@ export class LandingComponent implements OnInit {
     var navbar = document.getElementsByTagName('nav')[0];
     navbar.classList.remove('navbar-transparent');
   }
+
 }

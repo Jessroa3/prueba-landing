@@ -921,7 +921,7 @@
 .section-isometricGrids .pater::before {
   content: '';
   position: absolute;
-  background: url(../img/ink.png) no-repeat top left;
+  background: url(../src/assets/img/bg1.jpg) no-repeat top left;
   width: 491px;
   height: 332px;
   top: -80px;
@@ -6243,8 +6243,8 @@ Created using IcoMoon - icomoon.io
 
 @font-face {
   font-family: 'Nucleo Outline';
-  src: url("../fonts/nucleo-outline.eot");
-  src: url("../fonts/nucleo-outline.eot") format("embedded-opentype"), url("../fonts/nucleo-outline.woff2") format("woff2"), url("../fonts/nucleo-outline.woff") format("woff"), url("../fonts/nucleo-outline.ttf") format("truetype"), url("../fonts/nucleo-outline.svg") format("svg");
+  src: url("../src/assets/fonts/nucleo-outline.eot");
+  src: url("../src/assets/fonts/nucleo-outline.eot") format("embedded-opentype"), url("../src/assets/fonts/nucleo-outline.woff2") format("woff2"), url("../src/assets/fonts/nucleo-outline.woff") format("woff"), url("../src/assets/fonts/nucleo-outline.woff") format("truetype"), url("../src/assets/fonts/nucleo-outline.woff") format("svg");
   font-weight: normal;
   font-style: normal;
 }
