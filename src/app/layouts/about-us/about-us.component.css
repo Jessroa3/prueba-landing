@@ -1,0 +1,29 @@
+.linkedin {
+  background-image: url(../../../assets/img/linkedin.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+li a{
+  height: 4rem;
+  width: 4rem;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 3px solid #888888 !important;
+}
+.nav-tabs>.nav-item>.nav-link.active {
+  background-color: #4444449e !important;
+}
+#mv a {
+  background-image: url(../../../assets/img/mv.png);
+  background-size: 65% !important;
+}
+#edutecno a{
+  background-image: url(../../../assets/img/edutecno.png);
+}
+
+#kel a{
+  background-image: url(../../../assets/img/kel.png);
+}

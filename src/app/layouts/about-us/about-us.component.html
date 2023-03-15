@@ -1,1 +1,96 @@
-<p>about-us works!</p>
+<div class="wrapper">
+  <div class="page-header page-header-small" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+      </div>
+      <div class="container">
+          <div class="content-center">
+              <div class="photo-container">
+                  <img src="../../../assets/img/fotoprofesional.jpeg" alt="">
+              </div>
+              <h3 class="title">Jessica Roa</h3>
+              <p class="category">Lead Developer | Scrum Master (SMPC) | Software Developer</p>
+          </div>
+      </div>
+  </div>
+  <div class="section">
+      <div class="container">
+        <div class="button-container">
+            <a  class="btn btn-default btn-round btn-lg btn-icon linkedin" rel="tooltip" title="Follow us on Linkedin" data-placement="bottom" href="https://www.linkedin.com/in/jessicaroa" target="_blank">
+            </a>
+        </div>
+        <h3 class="title">About me</h3>
+        <h5 class="description">Ingeniera con mas de 6 años de experiencia en desarrollo de proyectos de software, en los últimos años liderando equipos de desarrollo y gestión de proveedores. Comprometida en el cumplimiento de las metas del proyecto buscando la mejor solución para la necesidad del negocio. Siempre buscando aprender nuevas habilidades, asumir responsabilidades adicionales y crecer profesionalmente.</h5>
+          <div class="row">
+              <div class="col-md-12">
+                  <h4 class="title text-center">Experiencia</h4>
+<ul ngbNav #nav="ngbNav" class="nav-tabs d-flex justify-content-center">
+  <li ngbNavItem id="mv">
+    <a ngbNavLink class = 'mv'></a>
+    <ng-template ngbNavContent>
+      <div class="row">
+        <div class="card">
+          <h2 class="card-header bg-secondary text-center text-uppercase">Multivende</h2>
+          <div class="card-body">
+            <p>Empresa SaaS B2B de integración omnicanal para eCommerce, creada para ayudar a grandes y medianas empresas a centralizar la administración de sus marketplaces y tiendas online, permitiéndoles optimizar su operación online end-to-end para alcanzar un nivel de gestión más eficiente y con menos errores.</p>
+            <p>Objetivos cumplidos:</p>
+            <ul>
+              <li>Definición de roles, proceso de onboarding y metodologias de trabajo para el equipo de desarrollo e integraciones API.</li>
+              <li>Colaboración con el cuadro directivo para identificar problemas y proponer soluciones.</li>
+              <li>Supervisión y delegación de tareas en un equipo de 10 personas.</li>
+              <li>Gestión de partners técnicos.</li>
+              <li>Desarrollar nuevas funcionalidades y mantenimiento para la aplicación, la cual es contiene integraciones con diversas plataformas como Mercado Libre, Mirakel, Rocket, Shopify, VTEX, entre otros</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li ngbNavItem id="edutecno">
+    <a ngbNavLink></a>
+    <ng-template ngbNavContent>
+      <div class="row">
+        <div class="card">
+          <h2 class="card-header bg-secondary text-center text-uppercase">Edutecno</h2>
+          <div class="card-body">
+            <p>Institución de capacitación profesional y técnica con presencia en Chile y Perú. Acreditada por el Servicio Nacional de Capacitación y Empleo en Chile (SENCE).</p>
+            <p>Objetivos cumplidos:</p>
+            <ul>
+              <li>Liderar el equipo de sistemas e implemtación de metodología SCRUM.</li>
+              <li>Definiciones de modelo y desarrollo de nuevas funcionalidades: sistema ERP a medida del negocio, plataformas LMS, Web Services bajo arquitectura de micro servicios, integración con plataformas externas.</li>
+              <li>Creación de plantillas para las actividades interactivas.</li>
+              <li>Actualización a nuevas tecnologías de los sistemas existentes.</li>
+              <li>Migración a servicios CLUD Azure.</li>
+              <li>Gestionar proveedores.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li ngbNavItem id = "kel">
+    <a ngbNavLink></a>
+    <ng-template ngbNavContent>
+      <div class="row">
+        <div class="card">
+          <h2 class="card-header bg-secondary text-center text-uppercase">Industrias KEL</h2>
+          <div class="card-body">
+            <p>Empresa Venezolana dedicada a la fabricación de productos alimenticiones del grupo familiar.</p>
+            <p>Objetivos cumplidos:</p>
+            <ul>
+              <li>Desarrollo de sistema de control de pedidos, distribución y administración de inventario.</li>
+              <li>Desarrollo de sistema de administración del fondo de ahorro de los colaboradores.</li>
+              <li>Desarrollo de sitio web.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
