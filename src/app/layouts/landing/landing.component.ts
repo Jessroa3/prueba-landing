@@ -19,6 +19,7 @@ export class LandingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private emailService: EmailService, private toastr: ToastrService) {
 
+    this.botonForm = "Enviar";
     this.contact = this.fb.group({
     name: ['', Validators.required],
     phone: ['', [Validators.required,  Validators.maxLength(16)]],
@@ -48,6 +49,7 @@ export class LandingComponent implements OnInit {
         this.botonForm = "Enviar";
         this.toastr.success("Solicitud recibida con éxito", "Solicitud recibida")
         this.contact.reset()
+        this.validateFormContact = false;
       }, error => {
         this.loading = false;
         this.toastr.error("Error procesando la solicitud, por favor, intente de nuevo", "Error procesando solicitud")
