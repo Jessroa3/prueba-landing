@@ -22,10 +22,10 @@
             <div class="col-md-6">
                 <div class="image-container image-left" style="background-image: url('assets/img/dispositivos-3.webp')">
                   <!-- First image on the left side -->
-                  <p class="blockquote blockquote-primary">"Over the span of the satellite record, Arctic sea ice has been declining significantly, while sea ice in the Antarctichas increased very slightly"
+                  <p class="blockquote blockquote-primary">"No es sobre las ideas. Sino sobre hacer que estas se vuelvan realidad."
                     <br>
                     <br>
-                    <small>-NOAA</small>
+                    <small>-Scott Belsky, Cofundador de Behance.</small>
                   </p>
                 </div>
                 <!-- Second image on the left side of the article -->
@@ -34,7 +34,7 @@
             <div class="col-md-5">
               <!-- First image on the right side, above the article -->
               <div class="image-container image-right" style="background-image: url('assets/img/idea.webp')"></div>
-              <h3>So what does the new record for the lowest level of winter ice actually mean</h3>
+              <h3>Tú lo imaginas nosotros lo creamos para ti</h3>
               <p>Un servicio de desarrollo de sistemas, aplicaciones, páginas web o cualquier tipo de software que permite a un particular o empresa contar con un equipo altamente experimentado.
               </p>
               <p>Ofrecemos una experiencia de calidad, protegiendo los datos sensibles, respondiendo rápidamente a las necesidades del mercado, creando software operativos.
@@ -113,34 +113,42 @@
         <div class="row justify-content-md-center">
           <div class="card">
             <h2 class="card-header bg-secondary text-center text-uppercase">Contacto</h2>
-            <p class="description">Your project is very important to us.</p>
-            <form >
+            <p class="description">Su proyecto es muy importante para nosotros</p>
+            <form [formGroup]="contact" (ngSubmit)="sendEmail()">
               <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" class="form-control is-valid" id="name" aria-describedby="nameHelp" required>
-                <div id="validationName" class="invalid-feedback">
-                  Please provide a valid city.
+                <input type="text" class="form-control" [class.is-valid]="this.contact.get('name')?.valid"
+                  [class.is-invalid]="this.contact.get('name')?.invalid && (this.contact.get('name')?.touched || validateFormContact)" 
+                  formControlName="name"  id="name" aria-describedby="nameHelp" required>
+                <div id="validationName" class="invalid-feedback" *ngIf="this.contact.get('name')?.invalid && (this.contact.get('name')?.touched || validateFormContact)">
+                  Por favor, ingrese su nombre.
                 </div>
               </div>
               <div class="form-group">
                 <label for="phone">Teléfono</label>
-                <input type="phone" class="form-control is-valid" id="phone" aria-describedby="phoneHelp" required>
-                <div id="validationPhone" class="invalid-feedback">
-                  Please provide a valid city.
+                <input type="phone" class="form-control" [class.is-valid]="this.contact.get('phone')?.valid"
+                  [class.is-invalid]="this.contact.get('phone')?.invalid && (this.contact.get('phone')?.touched || validateFormContact)" 
+                  formControlName="phone" id="phone" aria-describedby="phoneHelp" required>
+                <div id="validationPhone" class="invalid-feedback" *ngIf="this.contact.get('phone')?.invalid && (this.contact.get('phone')?.touched || validateFormContact)">
+                  Por favor, ingrese su número de teléfono.
                 </div>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control is-valid" id="email" aria-describedby="emailHelp" required>
-                <div id="validationEmail" class="invalid-feedback">
-                  Please provide a valid city.
+                <input type="email" class="form-control" [class.is-valid]="this.contact.get('email')?.valid"
+                  [class.is-invalid]="this.contact.get('email')?.invalid && (this.contact.get('email')?.touched || validateFormContact)" 
+                  formControlName="email" id="email" aria-describedby="emailHelp" required>
+                <div id="validationEmail" class="invalid-feedback" *ngIf="this.contact.get('email')?.invalid && (this.contact.get('email')?.touched || validateFormContact)">
+                  Por favor, ingrese su correo electrónico.
                 </div>
               </div>
               <div class="form-group">
                 <label for="message">Mensaje</label>
-                <textarea class="form-control is-invalid" id="message" rows="3" aria-describedby="messageHelp" required></textarea>
-                <div id="validationMessage" class="invalid-feedback">
-                  Please provide a valid city.
+                <textarea class="form-control" [class.is-valid]="this.contact.get('message')?.valid" 
+                  [class.is-invalid]="this.contact.get('message')?.invalid && (this.contact.get('message')?.touched || validateFormContact)" 
+                  formControlName="message" id="message" rows="3" aria-describedby="messageHelp" required></textarea>
+                <div id="validationMessage" class="invalid-feedback" *ngIf="this.contact.get('message')?.invalid && (this.contact.get('message')?.touched || validateFormContact)">
+                  Por favor, ingrese su mensaje con el detalle de su solicitud.
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
