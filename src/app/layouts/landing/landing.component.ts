@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import * as Rellax from 'rellax';
 import { EmailService } from 'src/app/services/email.service';
 
@@ -13,8 +14,10 @@ export class LandingComponent implements OnInit {
   focus1 = false;
   contact: FormGroup;
   validateFormContact = false;
+  loading = false;
+  botonForm = "Enviar";
 
-  constructor(private fb: FormBuilder, private emailService: EmailService) {
+  constructor(private fb: FormBuilder, private emailService: EmailService, private toastr: ToastrService) {
 
     this.contact = this.fb.group({
     name: ['', Validators.required],
@@ -37,19 +40,24 @@ export class LandingComponent implements OnInit {
 
   sendEmail() {
     console.log(this.contact)
+    this.loading = true
+    this.botonForm = "Enviando"
     if(this.contact.valid === true){
-      console.log("valido")
-      console.log(this.contact.value)
-      this.emailService.sendEmail(this.contact.value).subscribe(response => {
-        console.log("enviado")
-        console.log(response)
-        window.location.href = 'https://mailthis.to/confirm'
+      this.emailService.sendEmail(this.contact.value).then(response => {
+        this.loading = false;
+        this.botonForm = "Enviar";
+        this.toastr.success("Solicitud recibida con éxito", "Solicitud recibida")
+        this.contact.reset()
       }, error => {
+        this.loading = false;
+        this.toastr.error("Error procesando la solicitud, por favor, intente de nuevo", "Error procesando solicitud")
         console.log(error)
       })
     }
     else{
       console.log("invalid")
+      this.loading = false;
+      this.botonForm = "Enviar";
       this.validateFormContact = true;
     }
   }
